@@ -7,6 +7,25 @@
       def mvnHome =  tool name: 'maven-3', type: 'maven'   
       sh "${mvnHome}/bin/mvn package"
    }
+
+    stage('SonarQube analysis') {
+    withSonarQubeEnv('sonar-1') {
+
+       def mvnHome = tool name: 'maven-3' , type: 'maven'
+
+
+
+      // requires SonarQube Scanner for Maven 3.2+
+
+
+
+      sh "${mvnHome}/bin/mvn/ sonar:sonar"
+
+    }
+
+  }
+
+  
    /*stage('Email Notification'){
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
       Thanks

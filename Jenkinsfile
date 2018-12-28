@@ -11,7 +11,7 @@
     stage('SonarQube analysis') {
     withSonarQubeEnv('sonar-1') {
 
-       def mvnHome = tool name: 'maven-3' , type: 'maven'
+       //def mvnHome = tool name: 'maven-3' , type: 'maven'
 
 
 

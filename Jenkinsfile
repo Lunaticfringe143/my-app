@@ -14,17 +14,21 @@
 
        def mvnHome = tool name: 'maven-3' , type: 'maven'
 
-
-
-      // requires SonarQube Scanner for Maven 3.2+
-
-
-
+    // requires SonarQube Scanner for Maven 3.2+
       sh "${mvnHome}/bin/mvn sonar:sonar"
 
     }
 
   }
+    
+    stage('sonar-check'){
+      timeout(time: 1, unit: 'HOURS'){
+        def aa = waitForQualityGate()
+        if(aa.status != 'OK'){
+          error "Pipeline aborted due to check in quality gate: ${aa.status}"
+        }
+      }
+    }
 
   
    /*stage('Email Notification'){

@@ -35,9 +35,9 @@
     
     stage('sonar-check'){
       timeout(time: 1, unit: 'HOURS'){
-        def aa = waitForQualityGate()
-        if(aa.status != 'OK'){
-          error "Pipeline aborted due to check in quality gate: ${aa.status}"
+        def stime = waitForQualityGate()
+        if(stime.status != 'OK'){
+          error "Pipeline aborted due to check in quality gate: ${stime.status}"
         }
       }
     }

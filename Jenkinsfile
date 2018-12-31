@@ -34,17 +34,14 @@
   }
     
     stage('Check Quality Gate') {
-            steps {
+        
                 echo 'Checking quality gate...'
-                script {
-                    timeout(time: 1, unit: 'HOURS') {
+                timeout(time: 1, unit: 'HOURS') {
                         def swait = waitForQualityGate()
                         if (swait.status != 'OK') {
                             error "Pipeline aborted due to quality gate failure: ${swait.status}"
                         }
-                    }
-                }
-            }
+                 }
     }
 
   

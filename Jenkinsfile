@@ -33,13 +33,18 @@
 
   }
     
-    stage('sonar-check'){
-      timeout(time: 1, unit: 'HOURS'){
-        def stime = waitForQualityGate()
-        if(stime.status != 'OK'){
-          error "Pipeline aborted due to check in quality gate: ${stime.status}"
-        }
-      }
+    stage('Check Quality Gate') {
+            steps {
+                echo 'Checking quality gate...'
+                script {
+                    timeout(time: 1, unit: 'HOURS') {
+                        def swait = waitForQualityGate()
+                        if (swait.status != 'OK') {
+                            error "Pipeline aborted due to quality gate failure: ${swait.status}"
+                        }
+                    }
+                }
+            }
     }
 
   

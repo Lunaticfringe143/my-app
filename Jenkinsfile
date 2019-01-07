@@ -55,7 +55,7 @@
        channel: '#jenkins-pipeline-demo',
        color: 'good', 
        message: 'Welcome to Jenkins, Slack!', 
-       teamDomain: 'javahomecloud',
+       teamDomain: '',
        tokenCredentialId: 'slack-demo'
    }*/
 }

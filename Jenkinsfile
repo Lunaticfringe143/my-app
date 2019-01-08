@@ -42,7 +42,7 @@
                         }
                  }
     }*/
-     stage("Quality Gate Statuc Check"){
+     stage("Quality Gate Status Check"){
 
           timeout(time: 1, unit: 'HOURS') {
 

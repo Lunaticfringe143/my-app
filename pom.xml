@@ -41,10 +41,7 @@
 		    <url>http://13.233.125.37:8081/repository/maven-releases/</url>
 		</repository>
   	</distributionManagement>
-	<properties>
-         <sonar.analysis.mode>preview</sonar.analysis.mode>
-         <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
-    </properties>
+	
 	
 <build>
     <plugins>

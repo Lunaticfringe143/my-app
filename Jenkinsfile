@@ -2,11 +2,11 @@
    stage('SCM Checkout'){
      git 'https://github.com/Lunaticfringe143/my-app'
    }
-   /*stage('Compile-Package'){
+   stage('Compile-Package'){
     
       def mvnHome =  tool name: 'maven-3', type: 'maven'   
       sh "${mvnHome}/bin/mvn package"
-   }*/
+   }
 
     /*stage('SonarQube analysis') {
       
@@ -33,8 +33,7 @@
 
   }
     
-    stage('Check Quality Gate') {
-        
+    stage('Check Quality Gate') {        
                 echo 'Checking quality gate...'
                 timeout(time: 1, unit: 'HOURS') {
                         def swait = waitForQualityGate()

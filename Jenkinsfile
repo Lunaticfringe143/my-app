@@ -33,7 +33,7 @@
 
   }
     
-    stage('Check Quality Gate') {        
+    /*stage('Check Quality Gate') {        
                 echo 'Checking quality gate...'
                 timeout(time: 1, unit: 'HOURS') {
                         def swait = waitForQualityGate()
@@ -41,7 +41,34 @@
                             error "Pipeline aborted due to quality gate failure: ${swait.status}"
                         }
                  }
-    }
+    }*/
+     stage("Quality Gate Statuc Check"){
+
+          timeout(time: 1, unit: 'HOURS') {
+
+              def qg = waitForQualityGate()
+
+              if (qg.status != 'OK') {
+
+                   /*slackSend baseUrl: 'https://hooks.slack.com/services/',
+
+                   channel: '#jenkins-pipeline-demo',*/
+
+                   color: 'danger', 
+
+                   message: 'SonarQube Analysis Failed', 
+
+                   teamDomain: 'gandhi',
+
+                   tokenCredentialId: 'slack-demo'
+
+                  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+
+              }
+
+          }
+
+      }    
 
   
    /*stage('Email Notification'){

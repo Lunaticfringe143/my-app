@@ -43,6 +43,8 @@
                  }
     }*/
      stage("Quality Gate Status Check"){
+       echo 'Checking quality gate...'
+         withSonarQubeEnv('sonar-11') {
 
           timeout(time: 1, unit: 'HOURS') {
 
@@ -63,6 +65,7 @@
                    tokenCredentialId: 'slack-demo'*/
 
                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
+              }
 
               }
 

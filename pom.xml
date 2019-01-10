@@ -50,7 +50,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.mojo</groupId>
-			<artifactid>sonar-maven-plugin</artifactId>
+			<artifactId>sonar-maven-plugin</artifactId>
 			<version>3.4.0.905</version>
 			<type>pom</type>
 		</dependency>

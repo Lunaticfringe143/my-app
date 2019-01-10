@@ -22,7 +22,7 @@
   }*/
     stage('SonarQube analysis') {
       
-    withSonarQubeEnv('sonar-143') {
+    withSonarQubeEnv('sonar-11') {
 
        def mvnHome = tool name: 'maven-3' , type: 'maven'
 

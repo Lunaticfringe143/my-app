@@ -13,10 +13,11 @@
 		  <!--<sonar.java.spotbugs.reportPaths>./target/spotbugsXml.xml</sonar.java.spotbugs.reportPaths>
   		  <sonar.java.pmd.reportPaths>./target/pmd.xml</sonar.java.pmd.reportPaths>
 		  <sonar.java.checkstyle.reportPaths>./target/checkstyle-result.xml</sonar.java.checkstyle.reportPaths> -->
+		  <sonar.host.url>http://13.233.207.3:9000</sonar.host.url>
 		  <sonar.analysis.mode>preview</sonar.analysis.mode>
-		   <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
+		  <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
 	</properties>
-	<profiles>
+	<!--<profiles>
 	<profile>
 	 	 <Id>sonar</Id>
 	  	<activation>
@@ -26,7 +27,7 @@
              		<sonar.host.url>http://13.233.207.3:9000</sonar.host.url>
 	  	</properties>
         </profile>
-	</profiles>
+	</profiles>-->
 
 	<dependencies>
 		<dependency>

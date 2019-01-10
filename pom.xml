@@ -9,14 +9,14 @@
 
 	<url>http://maven.apache.org</url>
 	
-	<properties>
-		  <!--<sonar.java.spotbugs.reportPaths>./target/spotbugsXml.xml</sonar.java.spotbugs.reportPaths>
+	<!--<properties>
+		  <sonar.java.spotbugs.reportPaths>./target/spotbugsXml.xml</sonar.java.spotbugs.reportPaths>
   		  <sonar.java.pmd.reportPaths>./target/pmd.xml</sonar.java.pmd.reportPaths>
-		  <sonar.java.checkstyle.reportPaths>./target/checkstyle-result.xml</sonar.java.checkstyle.reportPaths> -->
+		  <sonar.java.checkstyle.reportPaths>./target/checkstyle-result.xml</sonar.java.checkstyle.reportPaths> 
 		  <sonar.host.url>http://13.233.207.3:9000</sonar.host.url>
 		  <sonar.analysis.mode>preview</sonar.analysis.mode>
 		  <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
-	</properties>
+	</properties> -->
 	<!--<profiles>
 	<profile>
 	 	 <Id>sonar</Id>

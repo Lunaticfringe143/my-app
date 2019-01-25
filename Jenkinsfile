@@ -20,6 +20,20 @@
     }
 
   }*/
+    stage('Analysis & Report') {
+                 writeFile file: "${pwd()}/sonar-project.properties", text: """
+                 #Mandatory meta data required
+                 sonar.projectKey=sonarcheck
+                 sonar.projectName=SonarDemo
+                 sonar.projectVersion=1.0
+                 #path to the src directory of the maven project
+                 sonar.sources=src
+                 sonar.jacoco.reportPath=target\\coverage-reports\\jacoco-unit.exec
+                 #sonar.sources=src/main/java/
+                 sonar.language=java
+                 sonar.java.binaries=target/
+                 """
+                }
     stage('SonarQube analysis') {
       
     withSonarQubeEnv('sonar-1') {

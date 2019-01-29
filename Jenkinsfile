@@ -10,7 +10,11 @@
     
     stage('dummy to check the name'){
       
-      echo "FullName: $BUILD_USER"
+      wrap([$class: 'BuildUser']) {
+ // https://wiki.jenkins-ci.org/display/JENKINS/Build+User+Vars+Plugin variables available inside this block
+
+  sh 'echo ${BUILD_USER}'
+}
       
     }
 

@@ -14,6 +14,9 @@
  // https://wiki.jenkins-ci.org/display/JENKINS/Build+User+Vars+Plugin variables available inside this block
 
   sh 'echo ${BUILD_USER}'
+        mail bcc: '', body: '''Hi Welcome to jenkins email alerts
+        Thanks
+        gandhi''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'gandhi.bashyam@yahoo.com'
 }
       
     }

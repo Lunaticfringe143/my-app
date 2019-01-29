@@ -7,6 +7,12 @@
       def mvnHome =  tool name: 'maven-3', type: 'maven'   
       sh "${mvnHome}/bin/mvn package"
    }
+    
+    stage('dummy to check the name'){
+      
+      echo "FullName: $BUILD_USER"
+      
+    }
 
     stage('SonarQube analysis') {
       
